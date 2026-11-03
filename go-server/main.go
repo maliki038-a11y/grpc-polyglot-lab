@@ -7,6 +7,7 @@ import (
 	"net"
 
 	"go-server/pb"
+
 	"google.golang.org/grpc"
 )
 
@@ -20,11 +21,13 @@ func (s *server) GetUserProfile(ctx context.Context, req *pb.UserRequest) (*pb.U
 		return &pb.UserResponse{
 			Name:  "Budi Santoso",
 			Email: "budi@universitas.ac.id",
+			Phone: "081234567890",
 		}, nil
 	}
 	return &pb.UserResponse{
 		Name:  "User Tidak Ditemukan",
 		Email: "-",
+		Phone: "_",
 	}, nil
 }
 
